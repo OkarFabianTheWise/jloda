@@ -12,7 +12,7 @@ const DownloadPage: React.FC = () => {
   const channelId = import.meta.env.VITE_APP_CHANNEL_ID;
   
 
-  const NGROK_URL = "https://jloda-313c7c5b8809.herokuapp.com";
+  const BACKEND_URL = "https://jloda-313c7c5b8809.herokuapp.com";
 
   useEffect(() => {
     fetchVideos();
@@ -52,7 +52,7 @@ const DownloadPage: React.FC = () => {
     try {
       setStatus("Starting download...");
       
-      const response = await fetch(`${NGROK_URL}/download`, {
+      const response = await fetch(`${BACKEND_URL}/download`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
